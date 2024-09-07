@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jewellery -woodmart</title>
+
+    <!-- swiper css -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <!-- file css  -->
+    <link rel="stylesheet" href="css/output.css" />
+    <link rel="stylesheet" href="css/loader.css" />
+    <!-- bootstrap icon  -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <!-- sweetAlert  -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <style>
+      :root {
+        .swiper-button-prev:after,
+        .swiper-button-next:after {
+          font-size: 20px;
+          font-weight: bold;
+        }
+        span.swiper-pagination-bullet.swiper-pagination-bullet-active {
+          background-color: rgb(0, 0, 0);
+          opacity: 1;
+        }
+      }
+    </style>
+  </head>
+  <body class="font-marcellus">
+    <main class="bg-gray relative">
+      <!-- start cart  -->
+      <div
+        class="cart-container w-[100%] h-[100vh] fixed bg-black bg-opacity-25 z-50 opacity-0 invisible transition-all duration-500"
+      >
+        <div
+          class="cart-overlay flex flex-col justify-between px-4 w-[300px] bg-white absolute right-0 top-0 h-full translate-x-[100%] transition-all duration-500"
+        >
+          <div>
+            <div class="cart-header py-3 flex justify-between items-center">
+              <strong>Shopping Cart</strong>
+              <button class="cart-close cursor-pointer">
+                <i class="bi bi-x align-middle"></i><span>close</span>
+              </button>
+            </div>
+            <hr class="text-gray" />
+            <div class="cart-body py-3 h-[70svh]">
+              <div class="w-full flex justify-center items-center">
+                <div class="loader"></div>
+              </div>
+            </div>
+          </div>
+          <div class="cart-footer mb-12">
+            <div class="flex justify-between items-center py-3">
+              <strong>SUBTOTAL</strong>
+              <p class="total-price">$00.0</p>
+            </div>
+
+            <button
+              class="w-[100%] flex justify-center items-center py-2 bg-gray clear-cart"
+            >
+              CLEAR ALL
+            </button>
+            <button
+              class="checkout-btn w-[100%] flex justify-center items-center text-white bg-orange py-2 mt-2"
+            >
+              CHECKOUT
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- start slider  -->
+      <div class="swiper w-[100%] h-[650px]" id="sliderHeader">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+          <!-- Slides -->
+          <div class="swiper-slide">
+            <div class="h-[100%] relative">
+              <img
+                src="img/image-1.png"
+                class="h-[100%] w-[100%] object-cover"
+                alt=""
+              />
+              <div class="w-[100%] flex justify-center absolute top-56 slide">
+                <div class="xl:container flex justify-end lg:me-52">
+                  <div
+                    class="w-[500px] sm:px-0 px-16 text-white flex justify-center flex-wrap text-center"
+                  >
+                    <h2
+                      class="font-bold text-2xl font-lora slide-top-text text-center"
+                    >
+                      fine jewelry
+                    </h2>
+                    <h1 class="uppercase text-3xl md:text-5xl my-3 slide-title">
+                      It`s a gift for someone special
+                    </h1>
+                    <p class="slide-bottom-text hidden lg:block">
+                      looked up one of the more obscure latin words,
+                      consecteture,from a lorem ipsum passage,and going through
+                      the cites of the word
+                    </p>
+                    <div class="mt-6 slide-buttons-wrapper">
+                      <button
+                        class="uppercase me-5 bg-white text-black py-2 px-4"
+                      >
+                        Shop now
+                      </button>
+                      <button
+                        class="uppercase text-white border border-white py-2 px-4"
+                      >
+                        view more
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="h-[100%] relative">
+              <img
+                src="img/image-2.png"
+                class="h-[100%] w-[100%] object-cover"
+                alt=""
+              />
+              <div class="w-[100%] flex justify-center absolute top-56 slide">
+                <div class="xl:container flex justify-start lg:ms-52">
+                  <div
+                    class="w-[500px] sm:px-0 px-16 text-white flex justify-center flex-wrap text-center"
+                  >
+                    <h2 class="font-bold text-2xl font-lora slide-top-text">
+                      fine jewelry
+                    </h2>
+                    <h1
+                      class="uppercase text-3xl md:text-5xl my-3 slide-title px-10"
+                    >
+                      It`s a gift for someone special
+                    </h1>
+                    <p class="slide-bottom-text hidden lg:block">
+                      looked up one of the more obscure latin words,
+                      consecteture,from a lorem ipsum passage,and going through
+                      the cites of the word
+                    </p>
+                    <div class="mt-6 slide-buttons-wrapper">
+                      <button
+                        class="uppercase me-5 bg-white text-black py-2 px-4"
+                      >
+                        Shop now
+                      </button>
+                      <button
+                        class="uppercase text-white border border-white py-2 px-4"
+                      >
+                        view more
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- If we need navigation buttons -->
+        <div class="swiper-button-prev text-white"></div>
+        <div class="swiper-button-next text-white"></div>
+      </div>
+      <!-- end slider  -->
+
+      <!-- start header   -->
+      <header
+        class="w-full h-[80px] flex items-center justify-between px-4 xl:px-32 absolute left-0 top-0 z-20"
+      >
+        <!--start header desktop  -->
+        <figure class="hidden lg:block w-[220px]">
+          <img src="img/wood-logo-white.svg" alt="" class="w-full" />
+        </figure>
+        <ul class="hidden lg:flex items-center gap-8 text-white">
+          <li><a href="">HOME</a></li>
+          <li><a href="">SHOP</a></li>
+          <li><a href="">BLOG</a></li>
+          <li><a href="">PAGES</a></li>
+          <li><a href="">ELEMENTS</a></li>
+          <li><a href="">BUY</a></li>
+        </ul>
+        <div class="hidden lg:flex text-white gap-4">
+          <!-- <button class="relative">
+            <i class="bi bi-heart"></i>
+            <span
+              class="bg-orange px-[4px] text-[11px] rounded-xl absolute translate-x-[-4px] translate-y-[-5px]"
+              >0</span
+            >
+          </button> -->
+          <a href="utilities/auth.html" class="uppercase login">login</a>
+          <a href="utilities/dashboard.html" class="uppercase dashboard"
+            >dashboard</a
+          >
+          <button class="relative cart-icon">
+            <i class="bi bi-cart2"></i>
+            <span
+              class="bg-orange px-[4px] text-[11px] rounded-xl absolute translate-x-[-4px] translate-y-[-5px] quantity"
+              >0</span
+            >
+          </button>
+        </div>
+        <!--end header desktop  -->
+        <!-- start header mobile  -->
+        <div class="flex lg:hidden items-center">
+          <i class="bi bi-list text-white text-2xl"></i>
+        </div>
+        <figure class="lg:hidden block w-[220px]">
+          <img src="img/wood-logo-white.svg" alt="" class="w-full" />
+        </figure>
+        <div
+          class="flex lg:hidden text-xl items-center justify-center text-white"
+        >
+          <!-- <button class="relative mr-6 p-0">
+            <i class="bi bi-heart"></i>
+            <span
+              class="flex justify-center items-center font-normal h-[10px] right-0 top-0 bg-orange py-[10px] px-[5px] rounded-[50%] text-[10px] absolute translate-x-[10px] translate-y-[-10px]"
+              >0</span
+            >
+          </button> -->
+          <a href="utilities/auth.html" class="text-[14px] uppercase login mr-4"
+            >login</a
+          >
+          <a
+            href="utilities/dashboard.html"
+            class="text-[14px] mr-4 uppercase dashboard"
+            >dashboard</a
+          >
+          <button class="relative p-0 cart-icon">
+            <i class="bi bi-cart2"></i>
+            <span
+              class="flex justify-center items-center font-normal h-[10px] right-0 top-0 bg-orange py-[10px] px-[5px] text-[10px] rounded-[50%] absolute translate-x-[10px] translate-y-[-10px] quantity"
+              >0</span
+            >
+          </button>
+        </div>
+        <!-- end header mobile  -->
+      </header>
+      <!-- end header  -->
+
+      <div class="flex justify-center flex-wrap">
+        <div class="w-full xl:container">
+          <!-- start section 2  -->
+          <section
+            class="w-[100%] h-auto px-4 xl:px-32 flex flex-wrap py-12 bg-gray justify-center"
+          >
+            <figure class="w-full md:w-[45%] me-10">
+              <img
+                src="img/jewelry-girl-welcome-row-1.png"
+                alt=""
+                class="w-full"
+              />
+            </figure>
+            <div
+              class="w-full md:w-[45%] flex flex-col justify-center items-center mt-10 md:mt-0"
+            >
+              <h3 class="font-lora text-orange">Donec sollicitudin</h3>
+              <h2 class="text-4xl text-blackCustomize my-7 text-center">
+                JEWELLERY STORE
+              </h2>
+              <p class="text-center text-grayText">
+                An sincerity so extremity he additions. Her yet there truth
+                merit. Mrs all projecting favourable now unpleasing. Son law
+                garden chatty temper. Oh children provided to mr elegance
+                marriage strongly.
+              </p>
+              <div class="w-full flex mt-7 justify-center">
+                <button class="text-white bg-blackCustomize py-2 px-4 me-4">
+                  SHOP NOW
+                </button>
+                <button class="text-black border border-grayText py-2 px-4">
+                  VIEW MORE
+                </button>
+              </div>
+            </div>
+          </section>
+          <!-- end section 2 -->
+
+          <!-- start section 3 -->
+          <section class="w-[100%] px-4 xl:px-32 bg-gray py-8 min-h-[500px]">
+            <!-- start title 3  -->
+            <div class="text-center">
+              <h3 class="text-orange font-lora">Adipisicing elit</h3>
+              <h2 class="text-4xl text-blackCustomize my-4">
+                FEATURED PRODUCTS
+              </h2>
+              <p class="text-grayText">
+                There are many variations of passages of lorem ipsum available.
+              </p>
+            </div>
+            <!-- end title 3 -->
+
+            <!-- start section 1/3  -->
+            <div class="flex py-8 justify-between">
+              <div
+                class="hidden lg:flex lg:flex-wrap relative overflow-hidden group"
+              >
+                <img
+                  src="img/product-banner.jpg"
+                  alt=""
+                  class="group-hover:scale-110 transition-all duration-500 object-cover"
+                  loading="eager"
+                />
+                <div
+                  class="absolute -bottom-12 text-center py-5 group-hover:bottom-0 transition-all duration-500"
+                >
+                  <h2>TRISTIQUE JUSTO</h2>
+                  <p class="text-grayText pb-4">
+                    Started now shortly had for assured hearing expense led
+                    juvenile.
+                  </p>
+                  <a href="" class="border-b-2 border-b-slate-300 text-xl mt-4"
+                    >shop now</a
+                  >
+                </div>
+              </div>
+
+              <!-- start slider 1  -->
+              <!-- Slider main container -->
+              <div class="swiper md:w-[75%] w-[100%]" id="slider1">
+                <!-- Additional required wrapper -->
+                <div
+                  class="swiper-wrapper w-[100%] flex items-center"
+                  id="products"
+                >
+                  <div
+                    class="container-loader w-[100%] flex justify-center items-center"
+                  >
+                    <div class="loader"></div>
+                  </div>
+                  <!-- Slides -->
+                </div>
+
+                <!-- If we need navigation buttons -->
+                <div class="swiper-button-prev text-black"></div>
+                <div class="swiper-button-next text-black"></div>
+              </div>
+              <!-- end slider 1 -->
+            </div>
+
+            <!-- end section 1/3  -->
+          </section>
+          <!-- end section3  -->
+
+          <!-- start section 4 -->
+          <section
+            class="w-[100%] px-4 xl:px-32 bg-gray py-8 flex justify-center items-center flex-wrap"
+          >
+            <div
+              class="bg-white w-full md:w-[50%] md:-me-[100px] relative z-20 py-14 px-5"
+            >
+              <h2 class="md:text-5xl text-3xl">
+                Explore the striking <br />
+                exclusive collections
+              </h2>
+              <p class="text-grayText my-4">
+                On projection apartments unsatiable so if he entreaties
+                appearance. Rose you wife how set lady half wish. Hard sing an
+                in true felt. Welcomed stronger if steepest ecstatic an suitable
+                finished of oh entered.
+              </p>
+              <p class="text-grayText border-l-2 border-l-orange ps-4">
+                And produce say the ten moments parties. Simple innate summer
+                fat appear basket his desire joy. Outward clothes promise at
+                gravity.
+              </p>
+              <div class="flex mt-4 gap-4">
+                <i class="bi bi-linkedin text-grayText"></i>
+                <i class="bi bi-instagram text-grayText"></i>
+                <i class="bi bi-github text-grayText"></i>
+                <i class="bi bi-telegram text-grayText"></i>
+              </div>
+            </div>
+            <figure
+              class="w-full md:w-[50%] relative z-10 flex justify-center mt-10 md:mt-0"
+            >
+              <img src="img/jew-girl-auth-img.jpg" alt="" />
+            </figure>
+          </section>
+          <!-- end section 4 -->
+
+          <!-- start section 5 -->
+          <section
+            class="w-[100%] px-4 xl:px-32 bg-gray py-8 flex justify-center flex-wrap items-center"
+          >
+            <figure
+              class="w-full md:w-[40%] flex justify-center md:me-14 order-2 md:order-1"
+            >
+              <img src="img/jewelry-video-img.jpg" alt="" />
+            </figure>
+            <div class="w-full md:w-[50%] md:my-0 my-8 order-1 md:order-2">
+              <h3 class="text-orange text-xl">Special offer</h3>
+              <h2 class="md:text-7xl text-4xl my-4">JEWELLERY BOX</h2>
+              <h4 class="text-4xl border-r-4 border-r-orange w-fit pe-24">
+                ALL IN ONE BOX
+              </h4>
+              <button class="text-white bg-black py-2 px-4 mt-4">
+                CEHCK NOW
+              </button>
+            </div>
+          </section>
+          <!-- end section 5 -->
+
+          <!-- start section 6  -->
+          <section
+            class="w-[100%] px-4 xl:px-32 bg-gray py-14 flex justify-center items-center flex-wrap"
+          >
+            <div class="w-full md:w-[50%]">
+              <h2 class="text-5xl">
+                DISCOUNT OF <span class="text-orange">20%</span>
+              </h2>
+              <h3 class="text-3xl">ON ALL GOLD RINGS</h3>
+              <p class="text-grayText my-8">
+                She exposed painted fifteen are noisier mistake led waiting.
+                Surprise not wandered speedily husbands although yet end. Are
+                court tiled cease young built fat one man taken. We highest ye
+                friends is exposed equally in. Ignorant had too.
+              </p>
+              <div class="flex">
+                <img src="img/diamond-1.svg" alt="" />
+                <p class="text-grayText ps-5">
+                  His six are entreaties instrument acceptance unsatiable.
+                </p>
+              </div>
+              <div class="flex my-4">
+                <img src="img/diamond-1.svg" alt="" />
+                <p class="text-grayText ps-5">
+                  Iscovery commanded fat mrs remaining son she principle.
+                </p>
+              </div>
+              <div class="flex">
+                <img src="img/diamond-1.svg" alt="" />
+                <p class="text-grayText ps-5">
+                  Settling you has separate supplied bed concluded resembled.
+                </p>
+              </div>
+              <div class="flex mt-4">
+                <img src="img/diamond-1.svg" alt="" />
+                <p class="text-grayText ps-5">
+                  Cause dried no solid no an small so still widen ten weather.
+                </p>
+              </div>
+              <div class="flex mt-8">
+                <button class="bg-black py-2 px-4 me-5 text-white">
+                  GO TO SHOP
+                </button>
+                <button class="border border-blackCustomize py-2 px-4">
+                  VIEW MORE
+                </button>
+              </div>
+            </div>
+            <figure class="w-full md:w-[50%] mt-14 md:mt-0">
+              <img src="img/jewelry-collage-girl-img.png" alt="" />
+            </figure>
+          </section>
+          <!-- end section 6  -->
+          <!-- start section 7  -->
+          <section
+            class="w-[100%] px-4 xl:px-32 bg-gray py-14 flex justify-between items-center flex-wrap"
+          >
+            <div
+              class="w-full lg:w-[40%] flex justify-start items-center relative"
+            >
+              <figure class="w-[100%] lg:w-[70%]">
+                <img src="img/products/jewelry-banner-img-1.jpg" alt="" />
+              </figure>
+              <div class="w-full lg:w-[30%] absolute lg:relative lg:-ms-40">
+                <h3 class="text-orange">Special offer</h3>
+                <h2 class="text-5xl">Mauris Rhoncus</h2>
+                <p class="my-4">Curabitur non nullat amet.</p>
+                <button class="bg-blackCustomize text-white py-2 px-4">
+                  VIEW MORE
+                </button>
+              </div>
+            </div>
+            <div
+              class="w-full lg:w-[60%] flex flex-wrap justify-end items-center mt-8"
+            >
+              <div class="w-full md:w-[50%] my-8 lg:my-0">
+                <h2 class="text-xl text-grayText">FEATURED PRODUCTS</h2>
+                <div class="flex my-4 items-center">
+                  <img src="img/products/product-jew-img-1-65x65.jpg" alt="" />
+                  <div>
+                    <p class="text-[13px]">Accumsan tincidunt</p>
+                    <p class="text-orange">$199.00</p>
+                  </div>
+                </div>
+                <hr class="text-grayText" />
+                <div class="flex my-4 items-center">
+                  <img src="img/products/product-jew-img-2-65x65.jpg" alt="" />
+                  <div>
+                    <p class="text-[13px]">Accumsan tincidunt</p>
+                    <p class="text-orange">$199.00</p>
+                  </div>
+                </div>
+                <hr class="text-grayText" />
+                <div class="flex mt-4 items-center">
+                  <img src="img/products/product-jew-img-9-65x65.jpg" alt="" />
+                  <div>
+                    <p class="text-[13px]">Accumsan tincidunt</p>
+                    <p class="text-orange">$199.00</p>
+                  </div>
+                </div>
+              </div>
+              <div class="w-full md:w-[45%] lg:ms-2 my-8 lg:my-0">
+                <h2 class="text-xl text-grayText">NEW PRODUCTS</h2>
+                <div class="flex my-4 items-center">
+                  <img src="img/products/product-jew-img-10-65x65.jpg" alt="" />
+                  <div>
+                    <p class="text-[13px]">Accumsan tincidunt</p>
+                    <p class="text-orange">$199.00</p>
+                  </div>
+                </div>
+                <hr class="text-grayText" />
+                <div class="flex items-center my-4">
+                  <img src="img/products/product-jew-img-11-65x65.jpg" alt="" />
+                  <div>
+                    <p class="text-[13px]">Accumsan tincidunt</p>
+                    <p class="text-orange">$199.00</p>
+                  </div>
+                </div>
+                <hr class="text-grayText" />
+                <div class="flex items-center mt-4">
+                  <img src="img/products/product-jew-img-15-65x65.jpg" alt="" />
+                  <div>
+                    <p class="text-[13px]">Accumsan tincidunt</p>
+                    <p class="text-orange">$199.00</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- end section 7 -->
+
+          <!-- start section 8 -->
+          <section class="w-[100%] px-4 xl:px-32 bg-gray py-14">
+            <div class="text-center">
+              <h3 class="text-orange">Adipisicing elit</h3>
+              <h2 class="text-4xl my-4">SHOP OUR INSTAGRAM</h2>
+              <p class="text-grayText">
+                There are many variations of passages of lorem ipsum available.
+              </p>
+            </div>
+
+            <!-- start slider 4 -->
+            <div class="swiper w-full" id="slider4">
+              <!-- Additional required wrapper -->
+              <div class="swiper-wrapper py-10">
+                <!-- Slides -->
+                <div class="swiper-slide w-full flex justify-center">
+                  <img
+                    src="img/instagram/wd-inst-jewellery-1-300x300.jpg"
+                    alt=""
+                  />
+                </div>
+                <div class="swiper-slide flex justify-center">
+                  <img
+                    src="img/instagram/wd-inst-jewellery-2-300x300.jpg"
+                    alt=""
+                  />
+                </div>
+                <div class="swiper-slide flex justify-center">
+                  <img
+                    src="img/instagram/wd-inst-jewellery-3-300x300.jpg"
+                    alt=""
+                  />
+                </div>
+                <div class="swiper-slide flex justify-center">
+                  <img
+                    src="img/instagram/wd-inst-jewellery-4-300x300.jpg"
+                    alt=""
+                  />
+                </div>
+                <div class="swiper-slide flex justify-center">
+                  <img
+                    src="img/instagram/wd-inst-jewellery-5-300x300.jpg"
+                    alt=""
+                  />
+                </div>
+                <div class="swiper-slide flex justify-center">
+                  <img
+                    src="img/instagram/wd-inst-jewellery-6-300x300.jpg"
+                    alt=""
+                  />
+                </div>
+                <div class="swiper-slide flex justify-center">
+                  <img
+                    src="img/instagram/wd-inst-jewellery-7-300x300.jpg"
+                    alt=""
+                  />
+                </div>
+                <div class="swiper-slide flex justify-center">
+                  <img
+                    src="img/instagram/wd-inst-jewellery-8-300x300.jpg"
+                    alt=""
+                  />
+                </div>
+                <div class="swiper-slide flex justify-center">
+                  <img
+                    src="img/instagram/wd-inst-jewellery-9-300x300.jpg"
+                    alt=""
+                  />
+                </div>
+              </div>
+              <!-- If we need pagination -->
+              <div class="swiper-pagination"></div>
+
+              <!-- If we need navigation buttons -->
+              <div class="swiper-button-prev text-blackCustomize"></div>
+              <div class="swiper-button-next text-blackCustomize"></div>
+            </div>
+            <!-- end slider 4  -->
+          </section>
+          <!-- end section 8 -->
+
+          <!-- start footer  -->
+          <footer
+            class="w-full px-4 xl:px-32 bg-footerColor py-14 flex flex-wrap justify-center"
+          >
+            <div class="w-full md:w-[50%] flex flex-wrap">
+              <div class="w-full md:w-[45%] my-4 md:my-0">
+                <img src="img/footer/wood-logo-dark.svg" alt="" />
+                <p class="text-grayText mt-4">
+                  Condimentum adipiscing vel neque dis nam parturient orci at
+                  scelerisque neque dis nam parturient.
+                </p>
+                <div class="flex items-center my-4">
+                  <img src="img/footer/wd-cursor-dark.svg" alt="" />
+                  <p class="text-grayText ps-2">Tehran , Iran</p>
+                </div>
+                <div class="flex items-center">
+                  <img src="img/footer/wd-phone-dark.svg" alt="" />
+                  <p class="text-grayText ps-2">09188085590</p>
+                </div>
+                <div class="flex items-center mt-4">
+                  <img src="img/footer/wd-envelope-dark.svg" alt="" />
+                  <p class="text-grayText ps-2">l.hazrati78@yahoo.com</p>
+                </div>
+              </div>
+              <div class="w-full md:w-[40%] md:ms-10 my-4 md:my-0">
+                <h2 class="text-2xl text-blackCustomize">Recent Posts</h2>
+                <div class="flex my-4">
+                  <img src="img/footer/blog-11-75x65.jpg" alt="" />
+                  <div class="px-4 text-grayText">
+                    <p>A companion for extra sleeping</p>
+                    <p>July 23, 2016 1</p>
+                    <p>Comment</p>
+                  </div>
+                </div>
+                <hr class="text-grayText" />
+                <div class="flex my-4">
+                  <img src="img/footer/blog-12-75x65.jpg" alt="" />
+                  <div class="px-4 text-grayText">
+                    <p>A companion for extra sleeping</p>
+                    <p>July 23, 2016 1</p>
+                    <p>Comment</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="w-full md:w-[50%]">
+              <div class="flex flex-wrap justify-end items-center">
+                <div class="w-full md:w-[30%] my-4 md:my-0">
+                  <h2 class="text-2xl text-blackCustomize">Our Stores</h2>
+                  <p class="text-grayText mt-4">New York</p>
+                  <p class="text-grayText mt-4">London SF</p>
+                  <p class="text-grayText mt-4">Edinburgh</p>
+                  <p class="text-grayText mt-4">Los Angeles</p>
+                  <p class="text-grayText mt-4">Chicago</p>
+                  <p class="text-grayText mt-4">Las Vegas</p>
+                </div>
+                <div class="w-full md:w-[30%] my-4 md:my-0">
+                  <h2 class="text-2xl text-blackCustomize">Useful Links</h2>
+                  <p class="text-grayText mt-4">Privacy Policy</p>
+                  <p class="text-grayText mt-4">Returns</p>
+                  <p class="text-grayText mt-4">Terms & Conditions</p>
+                  <p class="text-grayText mt-4">Contact Us</p>
+                  <p class="text-grayText mt-4">Latest News</p>
+                  <p class="text-grayText mt-4">Our Sitemap</p>
+                </div>
+                <div class="w-full md:w-[30%] my-4 md:my-0">
+                  <h2 class="text-2xl text-blackCustomize" t>Footer Menu</h2>
+                  <p class="text-grayText mt-4">Instagram profile</p>
+                  <p class="text-grayText mt-4">New Collection</p>
+                  <p class="text-grayText mt-4">Woman Dres</p>
+                  <p class="text-grayText mt-4">Contact Us</p>
+                  <p class="text-grayText mt-4">Latest News</p>
+                  <p class="text-grayText mt-4">Purchase Theme</p>
+                </div>
+              </div>
+            </div>
+          </footer>
+          <!-- end footer  -->
+          <!--start last section  -->
+          <hr class="text-grayText" />
+          <section
+            class="w-full px-4 xl:px-32 py-4 bg-footerColor flex md:justify-between items-center flex-wrap justify-center"
+          >
+            <p class="text-[12px] text-grayText text-center mb-4 md:mb-0">
+              WOODMART © 2024 CREATED LADAN HAZRATI. PREMIUM E-COMMERCE
+              SOLUTIONS.
+            </p>
+            <img src="img/footer/payments.png" alt="" />
+          </section>
+        </div>
+      </div>
+    </main>
+  </body>
+  <!-- swiper  -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="./js/slider.js"></script>
+  <script src="./js/master.js"></script>
+</html>
+
+<!-- TRISTIQUE JUSTO
+Started now shortly had for assured hearing expense led juvenile.
+
+SHOP NOW -->
