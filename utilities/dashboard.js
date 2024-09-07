@@ -25,24 +25,17 @@ function displayUser() {
   loaderContainer.classList.add("hidden");
   usersContainer.innerHTML = "";
   usersContainer.innerHTML += users
-    .map(
-      (
-        { id, email, name: { firstname, lastname }, password, phone, username },
-        index
-      ) => {
-        const rowClass = index % 2 === 0 ? "bg-orange" : "";
-        return `
+    .map(({ id, name: { firstname, lastname }, password, username }, index) => {
+      const rowClass = index % 2 === 0 ? "bg-orange" : "";
+      return `
          <tr class='${rowClass} border'>
             <td class='p-3'>${id}</td>
             <td class='p-3'>${firstname} ${lastname}</td>
-            <td class='p-3'>${email}</td>
-            <td class='p-3'>${phone}</td>
             <td class='p-3'>${username}</td>
             <td class='p-3'>${password}</td>
           </tr>
 
         `;
-      }
-    )
+    })
     .join("");
 }
